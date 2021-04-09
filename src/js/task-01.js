@@ -6,5 +6,5 @@ console.log(`В списке ${navLinksEl.length} категории.`)
 const titleEl = navEl.querySelector('h2')
 console.log(`Категория: ${titleEl.textContent}`)
 
-const numberEl = navLinksEl.querySelectorAll('li')
-console.log(`Категория: ${numberEl.length}`)
+const numberEl = navEl.querySelector('ul').children.length;
+console.log(`Количество элементов: ${numberEl}`)
