@@ -16,25 +16,17 @@ const images = [
     },
   ];
 
-const navEl = document.querySelector('#gallery')
+const navEl = document.querySelector('ul')
   
 const navItemEl = images => {
     return images.map(image => {
         const createEl = document.createElement('li');
         createEl.classList.add('gallery_images');
         createEl.insertAdjacentHTML('afterbegin', `<img src=${image.url} alt='${image.alt}'>`);
-        createEl.setAttribute('style', 'width: 420; height:420; display: flex')
+        
         return createEl;
     });
 }
-
-// Устанавливает несколько стилей в одном выражении
-//elt.style.cssText = "color: blue; border: 1px solid black";
-// Или
-//elt.setAttribute("style", "color:red; border: 1px solid blue;");
-
-// Устанавливает определённый стиль оставляя другие значения стиля нетронутыми
-//elt.style.color = "blue";
 
 const elements = navItemEl(images);
 navEl.append(...elements);

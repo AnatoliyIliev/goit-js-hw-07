@@ -7,12 +7,13 @@ const ingredients = [
     'Приправы',
   ];
 
-const navEl = document.querySelector('#ingredients')
+const navEl = document.querySelector('ul')
 
 const navItemEl = ingredients => {
     return ingredients.map(ingredient => {
         const createEl = document.createElement('li');
-        createEl.innerText = ingredient; 
+        createEl.innerText = ingredient;
+        // console.log(createEl)
         return createEl;
     });
 }
@@ -20,4 +21,4 @@ const navItemEl = ingredients => {
 const elements = navItemEl(ingredients);
 // console.log(elements);
 navEl.append(...elements);
-console.log(navEl);
+// console.log(navEl);
