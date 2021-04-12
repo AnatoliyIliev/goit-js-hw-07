@@ -28,6 +28,8 @@ const navItemEl = images => {
     });
 }
 
+
+
 const elements = navItemEl(images);
 navEl.append(...elements);
 console.log(navEl);
