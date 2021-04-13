@@ -1,6 +1,7 @@
 const inputEl = document.querySelector('input')
 
 inputEl.addEventListener('change', changeInput);
+// inputEl.addEventListener('input', changeInput);
 
 function changeInput() {
     // console.log(typeof inputEl.value.length);
