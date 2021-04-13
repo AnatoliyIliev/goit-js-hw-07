@@ -1,14 +1,14 @@
 const inputEl = document.querySelector('input')
-// console.log(inputEl.dataset.length)
 
 inputEl.addEventListener('change', changeInput);
 
 function changeInput() {
-    console.log(inputEl.value.length);
-    console.log(inputEl.dataset.length);
-    if (inputEl.value.length === inputEl.dataset.length) {
-        return inputEl.classList.add('valid');
-    };
-    console.log(inputEl);
-    return inputEl.classList.add('invalid');
+    // console.log(typeof inputEl.value.length);
+    // console.log(typeof Number(inputEl.dataset.length));
+    if (inputEl.value.length === Number(inputEl.dataset.length)) {
+        inputEl.classList.remove('invalid');
+        return inputEl.classList.add('valid');        
+    } 
+    // inputEl.classList.remove('valid');
+    return inputEl.classList.add('invalid');    
 }

@@ -6,12 +6,12 @@ navEl[0].addEventListener('click', handelButtonClickDecrement);
 navEl[1].addEventListener('click', handelButtonClickIncrement);
 
 function handelButtonClickDecrement() {
-    listenerVal.innerText = counterValue - 1;
+    listenerVal.textContent = counterValue - 1;
     return counterValue -= 1;    
 }
 
 function handelButtonClickIncrement() {
-    listenerVal.innerText = counterValue + 1;
+    listenerVal.textContent = counterValue + 1;
     return counterValue += 1;  
 }
 

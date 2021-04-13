@@ -12,7 +12,7 @@ const navEl = document.querySelector('ul')
 const navItemEl = ingredients => {
     return ingredients.map(ingredient => {
         const createEl = document.createElement('li');
-        createEl.innerText = ingredient;
+        createEl.textContent = ingredient;
         // console.log(createEl)
         return createEl;
     });
