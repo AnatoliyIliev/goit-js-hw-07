@@ -6,24 +6,25 @@ const refs = {
     inputEl: document.querySelector('input')
 }
 
-console.log(refs.controlsDivEl);
-console.log(refs.boxesDivEl);
-
+refs.actionButton[0].addEventListener('click', createBoxes);
+refs.actionButton[1].addEventListener('click', destroyBoxes);
 refs.inputEl.addEventListener('input', createBoxes);
-// refs.actionButton[0].addEventListener('click', handelButtonClickDecrement);
-// refs.actionButton[1].addEventListener('click', handelButtonClickIncrement);
 
 function createBoxes(amount) {
-    console.log(amount);
-    // console.log(refs.inputEl.value);
-    const createEl = document.createElement('li');
-    createEl.classList.add('gallery_images');
-    createEl.insertAdjacentHTML('afterbegin', '<div>');  
-    console.log(createEl.insertAdjacentHTML('afterbegin', '<div>'));
-    console.log(refs.boxesDivEl);
+    console.log(Number(amount.currentTarget.value));
+    // console.log(amount.currentTarget.value);
+    // refs.boxesDivEl.insertAdjacentHTML('afterbegin', '<div>');  
+    // console.log(refs.boxesDivEl);
+    return refs.boxesDivEl * Number(amount.currentTarget.value);
+
 }
 
 function destroyBoxes(){
+  
+    return refs.boxesDivEl = " " ; 
 
-    return;
 }
+
+// refs.boxesDivEl.insertAdjacentHTML('afterbegin', '<div>');  
+// console.log(refs.boxesDivEl);
+// return refs.boxesDivEl * Number(amount.currentTarget.value);
