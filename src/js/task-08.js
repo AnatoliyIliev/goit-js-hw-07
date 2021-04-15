@@ -1,7 +1,8 @@
 const refs = {
     controlsDivEl: document.querySelector('#controls'),
     boxesDivEl: document.querySelector('#boxes'),
-    actionButton: document.querySelectorAll('button'),    
+    actionButton: document.querySelectorAll('button'),   
+    // inputEl: document.querySelector('input') 
 }
 
 refs.actionButton[0].addEventListener('click', createBoxes);
@@ -15,7 +16,8 @@ function createBoxes(amount) {
     // const numberOfDiv = Number(amount.currentTarget.value);
     // console.log(Number(amount.currentTarget.value));
     const numberOfDiv = refs.boxesDivEl.insertAdjacentHTML('afterbegin', "<div class='random-colour'></div>"); 
-    return numberOfDiv * Number(inputEl.value);
+    console.log(numberOfDiv)
+    // return numberOfDiv * Number(inputEl.value);
 }
 
 function destroyBoxes(){  
