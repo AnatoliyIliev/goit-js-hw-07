@@ -21,15 +21,19 @@ const navEl = document.querySelector('ul')
 const navItemEl = images => {
     return images.map(image => {
         const createEl = document.createElement('li');
-        createEl.classList.add('gallery_images');
-        createEl.insertAdjacentHTML('afterbegin', `<img src=${image.url} alt='${image.alt}'>`);
-        
+        createEl.classList.add('gallery');
+        createEl.insertAdjacentHTML('afterbegin', `<img class="images" src=${image.url} alt='${image.alt}'>`);
+        // const imageEl = document.querySelector('img')
+        // imageEl.classList.add('gallery_images');
+        // imageEl.style.width = '120px';
         return createEl;
     });
 }
 
-
-
 const elements = navItemEl(images);
 navEl.append(...elements);
-console.log(navEl);
+// const imageEl = document.querySelector('img')
+// imageEl.classList.add('gallery_images');
+// imageEl.setAttribute('class', 'gallery_images');
+// imageEl.style.width = '120px';
+// console.log(navEl);
