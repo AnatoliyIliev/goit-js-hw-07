@@ -1,29 +1,33 @@
-const refs = {
-    controlsDivEl: document.querySelector('#controls'),
-    boxesDivEl: document.querySelector('#boxes'),
-    actionButton: document.querySelectorAll('button'),   
-    // inputEl: document.querySelector('input') 
-}
+const divEl = document.getElementById('boxes');
+const addButton = document.querySelector('[data-action="render"]');
+const delButton = document.querySelector('[data-action="destroy"]');
 
-refs.actionButton[0].addEventListener('click', createBoxes);
-refs.actionButton[1].addEventListener('click', destroyBoxes);
-// refs.inputEl.addEventListener('input', createBoxes);
+addButton.addEventListener('click', createBoxes);
+delButton.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
-    const inputEl = document.querySelector('input')
-    console.log(Number(inputEl.value));
-    // console.log(amount.currentTarget.value);
-    // const numberOfDiv = Number(amount.currentTarget.value);
-    // console.log(Number(amount.currentTarget.value));
-    const numberOfDiv = refs.boxesDivEl.insertAdjacentHTML('afterbegin', "<div class='random-colour'></div>"); 
-    console.log(numberOfDiv)
-    // return numberOfDiv * Number(inputEl.value);
+  const input = document.querySelector('input');
+
+  let currentSize = 30;
+  //   let currentColor = () => Math.floor(Math.random() * 16777215).toString(16);
+  let Color = () => Math.floor(Math.random() * 255);
+
+  for (let i = 0; i < input.value; i += 1) {
+    const createDivElement = document.createElement('div');
+
+    const currentRGBColor = () => `rgb(${Color()}, ${Color()}, ${Color()})`;
+
+    createDivElement.setAttribute(
+      'style',
+      `background: ${currentRGBColor()}; width: ${currentSize}px; height: ${currentSize}px; margin: 5px; border: 1px solid black`,
+    );
+
+    currentSize += 10;
+
+    divEl.insertAdjacentElement('beforeend', createDivElement);
+  }
 }
 
-function destroyBoxes(){  
-    // return refs.boxesDivEl = " " ; 
+function destroyBoxes() {
+  divEl.innerHTML = '';
 }
-
-// refs.boxesDivEl.insertAdjacentHTML('afterbegin', '<div>');  
-// console.log(refs.boxesDivEl);
-// return refs.boxesDivEl * Number(amount.currentTarget.value);
