@@ -1,4 +1,5 @@
 const divEl = document.getElementById('boxes');
+const input = document.querySelector('input');
 const addButton = document.querySelector('[data-action="render"]');
 const delButton = document.querySelector('[data-action="destroy"]');
 
@@ -6,15 +7,12 @@ addButton.addEventListener('click', createBoxes);
 delButton.addEventListener('click', destroyBoxes);
 
 function createBoxes(amount) {
-  const input = document.querySelector('input');
-
   let currentSize = 30;
   //   let currentColor = () => Math.floor(Math.random() * 16777215).toString(16);
   let Color = () => Math.floor(Math.random() * 255);
 
   for (let i = 0; i < input.value; i += 1) {
     const createDivElement = document.createElement('div');
-
     const currentRGBColor = () => `rgb(${Color()}, ${Color()}, ${Color()})`;
 
     createDivElement.setAttribute(
@@ -30,4 +28,5 @@ function createBoxes(amount) {
 
 function destroyBoxes() {
   divEl.innerHTML = '';
+  input.value = '';
 }
